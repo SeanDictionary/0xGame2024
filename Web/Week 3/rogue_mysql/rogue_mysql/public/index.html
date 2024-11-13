@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rogue MySQL</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background: linear-gradient(to bottom, #4f46e5, #3b82f6);
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex items-center justify-center p-6">
+    <div class="w-full max-w-md bg-white shadow-lg rounded-lg p-8 space-y-6">
+        <h1 class="text-3xl font-bold text-center text-gray-800">Rogue MySQL</h1>
+
+        <!-- 输入框 -->
+        <div class="space-y-4">
+            <input id="host" type="text" placeholder="Host"
+                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
+            <input id="port" type="number" placeholder="Port"
+                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
+            <input id="user" type="text" placeholder="User"
+                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
+            <input id="pass" type="password" placeholder="Password"
+                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
+            <input id="db" type="text" placeholder="Database"
+                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
+            <textarea id="query" rows="3" placeholder="SQL Query"
+                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+        </div>
+
+        <!-- Connect 按钮 -->
+        <button id="connect-btn"
+            class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-lg transition duration-300">
+            Connect
+        </button>
+
+        <!-- 输出框 -->
+        <div id="output" class="w-full p-4 border rounded-lg bg-gray-100 text-gray-700 h-48 overflow-auto"></div>
+    </div>
+
+    <script>
+        document.getElementById('connect-btn').addEventListener('click', async () => {
+            const host = document.getElementById('host').value;
+            const port = parseInt(document.getElementById('port').value);
+            const user = document.getElementById('user').value;
+            const pass = document.getElementById('pass').value;
+            const db = document.getElementById('db').value;
+            const query = document.getElementById('query').value;
+            const output = document.getElementById('output');
+
+            const response = await fetch('/connect', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ host, port, user, pass, db, query })
+            });
+
+            const text = await response.text();
+            output.textContent = text;
+        });
+
+    </script>
+</body>
+
+</html>

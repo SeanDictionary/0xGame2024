@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pastebin - Report</title>
+    <script src="https://cdn.tailwindcss.com/3.4.5"></script>
+    <meta http-equiv="Content-Security-Policy"
+        content="base-uri 'none'; style-src 'unsafe-inline'; script-src 'self' 'sha256-mDsn/yxO0Kbxaggx7bFdeBmrC22U6cePGEUeeSwO+n0=' cdn.tailwindcss.com unpkg.com cdn.jsdelivr.net;">
+</head>
+
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+    <div class="w-full max-w-md p-6 bg-white shadow-lg rounded-lg">
+        <h1 class="text-2xl font-bold mb-4 text-center">Report Paste</h1>
+        <form id="reportForm" class="space-y-4">
+            <input id="pasteId" type="text" placeholder="Enter Paste ID..."
+                class="w-full p-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required />
+            <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600">
+                Report
+            </button>
+        </form>
+        <div id="message" class="hidden mt-4 p-4 bg-green-100 text-green-800 rounded-lg"></div>
+    </div>
+
+    <script src="/static/report.js"></script>
+</body>
+
+</html>

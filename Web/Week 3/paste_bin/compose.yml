@@ -1,0 +1,24 @@
+services:
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - FLAG=0xGame{easy_csp_bypass_in_rust-e928e182b4fd}
+      - RUST_LOG=INFO
+      - CF_SECRET_KEY=0x4AAAAAAAx1YNRCY0hCjlgGT3CqVRXOM7c
+    depends_on:
+      - bot
+
+  bot:
+    image: selenium/standalone-chrome:latest
+    # ports:
+    #   - "4444:4444"
+    environment:
+      - SE_ENABLE_TRACING=false
+      - SE_START_XVFB=false
+      - SE_NODE_MAX_SESSIONS=4
+      - SE_NODE_OVERRIDE_MAX_SESSIONS=true
+      - SE_ENABLE_BROWSER_LEFTOVERS_CLEANUP=true
+      - SE_BROWSER_LEFTOVERS_INTERVAL_SECS=1800
+      - SE_BROWSER_LEFTOVERS_PROCESSES_SECS=300

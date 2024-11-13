@@ -1,0 +1,13 @@
+services:
+  web:
+    build: .
+    ports:
+      - "8004:3000"
+    environment:
+      - MONGODB_URI=mongodb://db:27017
+      - FLAG=0xGame{mongodb_injection_in_next_js_eeb1751b8d4c}
+    depends_on:
+      - db
+  
+  db:
+    image: mongo:latest
