@@ -1,0 +1,7 @@
+version: '3'
+
+services:
+  basic-pwn:
+    build: .
+    ports:
+      - "60090:8000"

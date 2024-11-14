@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户信息</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .user-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+        .user-card h2 {
+            margin: 0 0 10px;
+            font-size: 24px;
+            color: #333;
+        }
+        .user-card p {
+            margin: 5px 0;
+            font-size: 16px;
+            color: #555;
+        }
+        .user-card .label {
+            font-weight: bold;
+            color: #777;
+        }
+        .user-card .value {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="user-card">
+        <h2>用户信息</h2>
+        <p><span class="label">姓名：</span><span class="value">{{user.username}}</span></p>
+        <p><span class="label">电子邮件：</span><span class="value">{{user.email}}</span></p>
+        <p><span class="label">电话号码：</span><span class="value">{{user.phone}}</span></p>
+        <p><span class="label">地址：</span><span class="value">{{user.address}}</span></p>
+        <p><span class="label">SQL语句：</span><span class="value">{{sql}}</span></p>
+        <p><span class="label">错误信息：</span><span class="value">{{error}}</span></p>
+    </div>
+</body>
+</html>

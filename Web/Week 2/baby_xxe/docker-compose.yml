@@ -1,0 +1,7 @@
+version: '3'
+
+services:
+  baby-xxe:
+    build: .
+    ports:
+      - "60088:8000"

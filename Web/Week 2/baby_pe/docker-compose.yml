@@ -1,0 +1,7 @@
+version: '3'
+
+services:
+  baby-pe:
+    build: .
+    ports:
+      - "60086:8000"

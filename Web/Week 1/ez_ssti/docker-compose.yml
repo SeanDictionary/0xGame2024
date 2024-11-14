@@ -1,0 +1,7 @@
+version: '3'
+
+services:
+  ez-ssti:
+    build: .
+    ports:
+      - "60082:8000"

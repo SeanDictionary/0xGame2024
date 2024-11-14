@@ -1,0 +1,7 @@
+version: '3'
+
+services:
+  baby-pickle:
+    build: .
+    ports:
+      - "60085:8000"

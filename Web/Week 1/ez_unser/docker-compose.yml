@@ -1,0 +1,7 @@
+version: '3'
+
+services:
+  ez-unser:
+    build: .
+    ports:
+      - "60083:8000"

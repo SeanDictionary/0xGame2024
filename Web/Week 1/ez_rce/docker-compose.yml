@@ -1,0 +1,7 @@
+version: '3'
+
+services:
+  ez-rce:
+    build: .
+    ports:
+      - "60081:8000"

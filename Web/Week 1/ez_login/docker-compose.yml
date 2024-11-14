@@ -1,0 +1,7 @@
+version: '3'
+
+services:
+  ez-login:
+    build: .
+    ports:
+      - "60084:8000"
