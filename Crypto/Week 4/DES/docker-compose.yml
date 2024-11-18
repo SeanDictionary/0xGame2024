@@ -1,0 +1,7 @@
+version: '2.4'
+services:
+  des:
+    build: .
+    ports:
+      - 10008:5000
+    privileged: true

@@ -1,0 +1,7 @@
+version: '2.4'
+services:
+  elgamal:
+    build: .
+    ports:
+      - 10002:5000
+    privileged: true

@@ -1,0 +1,1 @@
+flag = b'0xGame{de22c1fb-7f6b-42b1-a19a-5c16e12c70a4}\x04\x04\x04\x04'

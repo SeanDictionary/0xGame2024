@@ -1,0 +1,7 @@
+version: '2.4'
+services:
+  aes:
+    build: .
+    ports:
+      - 10007:5000
+    privileged: true

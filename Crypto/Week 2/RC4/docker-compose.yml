@@ -1,0 +1,7 @@
+version: '2.4'
+services:
+  rc4:
+    build: .
+    ports:
+      - 10001:5000
+    privileged: true
