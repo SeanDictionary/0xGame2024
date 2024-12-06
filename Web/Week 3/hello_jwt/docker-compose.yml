@@ -1,0 +1,8 @@
+version: "3"
+
+services:
+  web:
+    container_name: week3-hello-jwt
+    build: .
+    ports:
+      - "50006:3000"

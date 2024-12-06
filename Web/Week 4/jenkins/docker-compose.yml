@@ -1,0 +1,12 @@
+version: '2.2'
+services:
+  jenkins:
+    image: vulhub/jenkins:2.441
+    ports:
+      - "50000:50000"
+      - "8080:8080"
+      - "5005:5005"
+    init: true
+    environment:
+      - DEBUG=0
+    command: /bin/sh -c "echo '0xgame{2a6d2b88-7d12-4b66-901d-5ed489e9a322}' > /flag && /usr/local/bin/jenkins.sh"
