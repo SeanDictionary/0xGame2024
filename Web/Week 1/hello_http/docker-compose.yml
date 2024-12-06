@@ -1,0 +1,8 @@
+version: "3"
+
+services:
+  web:
+    container_name: week1-hello-http
+    build: .
+    ports:
+      - "50002:80"

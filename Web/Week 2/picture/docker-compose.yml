@@ -1,0 +1,8 @@
+version: "3"
+
+services:
+  web:
+    container_name: week2-picture
+    build: .
+    ports:
+      - "50003:80"
